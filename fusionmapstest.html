@@ -29,7 +29,7 @@
       function initialize() {
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeId: google.maps.MapTypeId.HYRBID,
           center: new google.maps.LatLng(38.438472,-78.873727),
           zoom: 16
         });
@@ -44,7 +44,7 @@
 
         var layer = new google.maps.FusionTablesLayer({
           query: {
-            select: 'Location',
+            select: '\'Location\'',
             from: '16NP68tY2xoaRXoJGWo7OJ9WyJKd8vrptlP30HtE'
           },
           map: map,
@@ -70,7 +70,7 @@
                 var request = {
                   origin: start,
                   destination: e.latLng,
-                  travelMode: google.maps.DirectionsTravelMode.DRIVING
+                  travelMode: google.maps.DirectionsTravelMode.WALKING
                 };
                 directionsService.route(request, function(response, status) {
                   if (status == google.maps.DirectionsStatus.OK) {
