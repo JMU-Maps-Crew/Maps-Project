@@ -33,14 +33,11 @@
 
       function initialize() {
 
-        var mapOptions = {
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+          mapTypeId: google.maps.MapTypeId.HYRBID,
           center: new google.maps.LatLng(38.438472,-78.873727),
           zoom: 15,
-          mapTypeId: google.maps.MapTypeId.HYBRID
-        };
-
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
+        });
 
         var infoWindow = new google.maps.InfoWindow();
 
@@ -52,9 +49,9 @@
 
         var layer = new google.maps.FusionTablesLayer({
           query: {
-            select: '\'Location\'',
-            from: '16NP68tY2xoaRXoJGWo7OJ9WyJKd8vrptlP30HtE'
-          }
+            select: 'Location',
+            from: '1ejXvdpkrru4MAssBa90SF5O9jhl4a6CdES8bbg'
+          },
           map: map,
           options: {
             suppressInfoWindows: true
