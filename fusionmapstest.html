@@ -36,7 +36,7 @@
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
           mapTypeId: google.maps.MapTypeId.HYRBID,
           center: new google.maps.LatLng(38.438472,-78.873727),
-          zoom: 16
+          zoom: 15,
         });
 
         var infoWindow = new google.maps.InfoWindow();
@@ -52,6 +52,10 @@
             select: '\'Location\'',
             from: '16NP68tY2xoaRXoJGWo7OJ9WyJKd8vrptlP30HtE'
           },
+          map: map,
+          options: {
+            suppressInfoWindows: true
+          }
         });
 
         // Add a click listener to the layer that creates a new infowindow
